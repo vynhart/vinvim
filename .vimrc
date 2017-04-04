@@ -30,6 +30,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'https://github.com/fatih/vim-go'
 
 call vundle#end()
 filetype plugin indent on
