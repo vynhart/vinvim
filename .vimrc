@@ -31,6 +31,7 @@ Plugin 'ngmy/vim-rubocop'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'https://github.com/fatih/vim-go'
+Plugin 'kylef/apiblueprint.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -71,7 +72,7 @@ nnoremap <silent> <unique> <S-Space> <PageUp>
 nmap <silent> ,. :nohlsearch<CR>
 nmap <silent> { [m
 nmap <silent> } ]M
-nmap <F5> :edit!<CR>
+"nnoremap <F5> :edit!<CR>
 
 " NERDTree
 " ********************************************************************
@@ -114,12 +115,24 @@ let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
 
 filetype plugin on
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+  endif
 let g:airline_powerline_fonts = 1
 let g:airline_theme='ubaryd'
 let g:airline#extensions#tabline#enabled = 1
+
+" nerdtree ignore log
+:let g:NERDTreeIgnore=['\~$', 'log\/']
 
 " Edit vimrc shortcut
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
+" CTRLSF
+let g:ctrlsf_case_sensitive = 'no'
+
 runtime macros/matchit.vim
+
+" Default global searching
+set gdefault
