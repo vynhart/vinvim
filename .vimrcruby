@@ -28,14 +28,12 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'tpope/vim-rails'
 Plugin 'ngmy/vim-rubocop'
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'https://github.com/fatih/vim-go'
 Plugin 'kylef/apiblueprint.vim'
 Plugin 'posva/vim-vue'
 Plugin 'https://github.com/majutsushi/tagbar'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'moll/vim-bbye'
 
 call vundle#end()
 filetype plugin indent on
@@ -66,12 +64,13 @@ set noswapfile
 " ********************************************************************
 inoremap jk <ESC>
 nnoremap s :w<CR>
-nnoremap q :Bdelete<CR>
-nnoremap <C-x> :q<CR>
-nnoremap <C-S-x> :q!<CR>
+nnoremap q :q<CR>
 nnoremap <C-u> gT
 nnoremap <C-i> gt
 nnoremap <C-f> :CtrlSF
+nnoremap <C-x> <Esc>
+nnoremap <C-t> :GoTest<CR>
+nnoremap <C-b> :GoBuild<CR>
 nnoremap <silent> <unique> <Space> <PageDown>
 nnoremap <silent> <unique> <S-Space> <PageUp>
 nmap <silent> ,. :nohlsearch<CR>
@@ -164,11 +163,6 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
-" snippet
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
 
 " let g:syntastic_go_checkers = ['golint']
 :set redrawtime=10000
@@ -176,9 +170,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " Indent
 " ********************************************************************
 set number
-set tabstop=4
+set tabstop=2
 "set softtabstop=0 noexpandtab
 "set noexpandtab
-" when indenting with '>', use 4 spaces width
-set shiftwidth=4
-set expandtab
+"set shiftwidth=2
+"set expandtab
