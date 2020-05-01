@@ -36,19 +36,28 @@ Plugin 'https://github.com/majutsushi/tagbar'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'moll/vim-bbye'
+Plugin 'StanAngeloff/php.vim'
 
 call vundle#end()
 filetype plugin indent on
 syntax on
 
-if $COLORTERM == 'gnome-terminal'
-  set t_Co=256
-endif
+" if $COLORTERM == 'gnome-terminal'
+"   set t_Co=256
+" endif
 
-"let g:solarized_termcolors=256  " Access colors present in 256 colorspace
-"colo solarized
-colo mustang
-set background=dark
+" Solarized Theme
+" let g:solarized_termcolors=256  " Access colors present in 256 colorspace
+" colorscheme solarized
+" colo solarized
+" set background=dark
+
+" Miramare Theme
+set termguicolors
+" the configuration options should be placed before `colorscheme miramare`
+let g:miramare_enable_italic = 1
+let g:miramare_disable_italic_comment = 1
+colorscheme miramare
 
 let mapleader=","
 
@@ -111,12 +120,13 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-  endif
-let g:airline_powerline_fonts = 1
-let g:airline_theme='ubaryd'
+" Airline
+" ********************************************************************
+" if !exists('g:airline_symbols')
+"     let g:airline_symbols = {}
+"   endif
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='solarized'
 
 " nerdtree ignore log
 :let g:NERDTreeIgnore=['\~$', 'log\/']
