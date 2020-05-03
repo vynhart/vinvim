@@ -126,7 +126,7 @@ let g:syntastic_check_on_wq = 0
 "     let g:airline_symbols = {}
 "   endif
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='solarized'
+let g:airline_theme='miramare'
 
 " nerdtree ignore log
 :let g:NERDTreeIgnore=['\~$', 'log\/']
